@@ -1,0 +1,7 @@
+{
+  // 中台模块的核心目录
+  "extends": [
+    "../../platform-none/tsconfig.json"
+  ],
+  "include": ["src/core/**/*"]
+}

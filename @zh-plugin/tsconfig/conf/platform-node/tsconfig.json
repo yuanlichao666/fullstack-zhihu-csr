@@ -1,0 +1,18 @@
+{
+  // 纯平台层(node)
+  // 专注平台编译特性
+  "extends":[
+    "../../core/tsconfig.json"
+  ],
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "types": [
+      "node"
+    ],
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowJs": true,
+    "resolveJsonModule": true
+  }
+}

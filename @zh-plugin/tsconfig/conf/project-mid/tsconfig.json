@@ -1,0 +1,13 @@
+{
+  "references": [
+    {
+      "path": "./bin/tsconfig.json"
+    },
+    {
+      "path": "./core/tsconfig.json"
+    },
+    {
+      "path": "./platforms/tsconfig.json"
+    }
+  ]
+}

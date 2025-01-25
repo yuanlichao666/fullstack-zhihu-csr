@@ -1,0 +1,12 @@
+{
+  // 纯平台层
+  // 专注平台编译特性
+  // ⚠️此配置文件仅适用于纯函数模块tsconfig配置
+  // ⚠️通常用于业务单元中的core核心库，具有平台无关性
+  "extends": [
+    "../../core/tsconfig.json"
+  ],
+  "compilerOptions": {
+    "lib": null
+  }
+}

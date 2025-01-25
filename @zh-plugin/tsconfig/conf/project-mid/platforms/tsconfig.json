@@ -1,0 +1,16 @@
+{
+  "references": [
+    {
+      "path": "./tsconfig.platform.cli.json"
+    },
+    {
+      "path": "./tsconfig.platform.nest.json"
+    },
+    {
+      "path": "./tsconfig.platform.react.json"
+    },
+    {
+      "path": "./tsconfig.platform.vue.json"
+    }
+  ]
+}

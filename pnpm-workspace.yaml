@@ -1,0 +1,4 @@
+packages:
+  - '@zh-frontend/**'
+  - '@zh-backend/**'
+  - '@zh-plugin/**'

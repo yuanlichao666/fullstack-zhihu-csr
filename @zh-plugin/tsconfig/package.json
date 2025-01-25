@@ -1,0 +1,10 @@
+{
+  "name": "@zh-plugin/tsconfig",
+  "version": "1.0.0",
+  "description": "",
+  "main": "core/tsconfig.json",
+  "module": "core/tsconfig.json",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

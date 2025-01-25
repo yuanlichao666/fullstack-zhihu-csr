@@ -1,0 +1,15 @@
+{
+  "name": "@zh-plugin/simple-pnpm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "simple-pnpm": "bin/simple.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

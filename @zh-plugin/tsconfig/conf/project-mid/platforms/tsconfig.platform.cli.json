@@ -1,0 +1,11 @@
+{
+  //面向多平台提供业务的库目录（cli平台）
+  //负责库文件的输入输出和决定使用什么ts配置
+  "extends": [
+    "../../platform-node/tsconfig.json",
+    "./tsconfig.lib.json"
+  ],
+  "include": [
+    "src/platform-cli/**/*"
+  ]
+}

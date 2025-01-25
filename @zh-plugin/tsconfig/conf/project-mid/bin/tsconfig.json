@@ -1,0 +1,7 @@
+{
+  // 中台模块的脚手架目录
+  "extends": [
+    "../../platform-node/tsconfig.json"
+  ],
+  "include": ["src/bin/**/*"]
+}

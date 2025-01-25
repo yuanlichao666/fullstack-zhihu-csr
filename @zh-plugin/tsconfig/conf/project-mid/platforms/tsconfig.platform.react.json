@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "../../framework-react/tsconfig.json",
+    "./tsconfig.lib.json"
+  ],
+  "include": [
+    "src/platform-react/**/*.ts",
+    "src/platform-react/**/*.tsx"
+  ]
+}

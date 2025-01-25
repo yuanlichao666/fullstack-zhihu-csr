@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "@zh-plugin/tsconfig/project-mid/platforms/tsconfig.platform.react.json"
+  ],
+  "include": [
+    "../../src/platform-react/**/*.ts",
+    "../../src/platform-react/**/*.tsx"
+  ]
+}

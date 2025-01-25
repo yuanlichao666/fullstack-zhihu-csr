@@ -1,0 +1,6 @@
+{
+  // 项目侧配置(vue项目)
+  // 不关注编译、只关注输入输出
+  "extends": ["../framework-vue/tsconfig.json"],
+  "include": ["src/**/*"]
+}

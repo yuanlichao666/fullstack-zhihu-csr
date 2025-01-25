@@ -1,0 +1,4 @@
+{
+  "extends": ["@zh-plugin/tsconfig/project-mid/platforms/tsconfig.platform.cli.json"],
+  "include": ["../../src/platform-cli/**/*"]
+}

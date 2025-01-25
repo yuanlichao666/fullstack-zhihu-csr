@@ -1,0 +1,19 @@
+{
+  // lib库的通用编译特性
+  // 主要是决定一些配套文件是否是生成
+  // 为platforms中多个平台的库目录编译提供通用配置
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "noEmit": false, //要js文件
+
+    //这里的库还是每个模版自己定义的
+    "lib": ["DOM", "ESNext"],
+
+    //模版自己需要的配置
+    "sourceMap": false, //要source map
+    "declaration": false, // 要.d.ts声明文件
+    "declarationMap": false, //要声明文件的source map
+    "emitDeclarationOnly": false
+  }
+}

@@ -1,0 +1,8 @@
+{
+  // 项目侧配置(cli项目)
+  // 不关注编译、只关注输入输出
+  "extends": [
+    "../platform-node/tsconfig.json"
+  ],
+  "include": ["lib/**/*", "bin/**/*"]
+}

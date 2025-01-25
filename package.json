@@ -1,0 +1,22 @@
+{
+  "name": "full-stack-zhihu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^22.10.2",
+    "@zh-plugin/images": "workspace:^",
+    "@zh-plugin/simple-pnpm": "workspace:^",
+    "@zh-plugin/tsconfig": "workspace:^",
+    "typescript": "^5.7.2"
+  },
+  "devDependencies": {
+    "npm-check": "^6.0.1"
+  }
+}

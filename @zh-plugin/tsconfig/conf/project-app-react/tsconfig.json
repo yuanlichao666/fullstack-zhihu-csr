@@ -1,0 +1,6 @@
+{
+  // 项目侧配置(react项目)
+  // 不关注编译、只关注输入输出
+  "extends": ["../framework-react/tsconfig.json"],
+  "include": ["src/**/*"]
+}

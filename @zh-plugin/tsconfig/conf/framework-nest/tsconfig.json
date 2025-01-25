@@ -1,0 +1,7 @@
+{
+  // 纯框架层(nest)
+  // 只关注框架的编译，不负责具体的内容
+  // 方便各种前端、中台项目基于此扩展自己的includes
+  "extends": [
+    "../../platform-node/tsconfig.json","../core/tsconfig.json"]
+}
