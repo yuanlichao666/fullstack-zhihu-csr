@@ -1,5 +1,5 @@
 {
-  //"extends": ["@zh-plugin/tsconfig/conf/platform-node"],
+  "extends": ["@zh-plugin/tsconfig/conf/platform-node"],
   "include": [
     "src/conf/**/*",
     "src/core/**/*",

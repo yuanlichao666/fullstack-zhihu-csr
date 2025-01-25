@@ -2,9 +2,25 @@
   "name": "@zh-plugin/tsconfig",
   "version": "1.0.0",
   "description": "",
-  "main": "core/tsconfig.json",
-  "module": "core/tsconfig.json",
+  "type": "module",
+  "main": "conf/core/tsconfig.json",
+  "bin": {
+    "autoConfig": "bin/auto-config.js"
+  },
+  "module": "conf/core/tsconfig.json",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "scripts": {
+    "gen-tsconfig-type": "tsx utils/json2ts/json2ts.ts"
+  },
+  "dependencies": {
+    "@types/typescript": "^2.0.0",
+    "@zh-plugin/cli-utils": "workspace:^",
+    "glob": "^11.0.0",
+    "@zh-plugin/exec": "workspace:^"
+  },
+  "devDependencies": {
+    "json-schema-to-typescript": "^15.0.3"
+  }
 }

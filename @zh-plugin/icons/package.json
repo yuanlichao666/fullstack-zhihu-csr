@@ -1,0 +1,40 @@
+{
+  "name": "@zh-plugin/icons",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tsc && tsc-alias",
+    "dev": "concurrently 'tsc -w' 'tsc-alias -w'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@iconify/tools": "^4.1.1",
+    "@iconify/utils": "^2.2.1",
+    "@zh-plugin/tsconfig": "workspace:^",
+    "concurrently": "^9.1.2",
+    "fs-extra": "^11.3.0",
+    "iconify": "^1.4.0",
+    "node-html-parser": "^7.0.1",
+    "vite": "^6.0.7"
+  },
+  "exports": {
+    "./vite": {
+      "import": "./dist/vite/index.js",
+      "types": "./dist/vite/index.d.ts"
+    },
+    "./core": {
+      "import": "./dist/core/index.js",
+      "types": "./dist/core/index.d.ts"
+    },
+    "./conf": {
+      "import": "./dist/conf/index.js",
+      "types": "./dist/conf/index.d.ts"
+    }
+  },
+  "devDependencies": {
+    "tsc-alias": "^1.8.10"
+  }
+}

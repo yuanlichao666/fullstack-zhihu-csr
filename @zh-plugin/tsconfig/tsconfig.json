@@ -1,0 +1,19 @@
+{
+  "files": [],
+  "extends": ["./conf/platform-node/tsconfig.json"],
+  "include": [
+    "bin/**/*",
+    "core/**/*",
+    "features/**/*",
+    "models/**/*",
+    "utils/**/*"
+  ],
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./*"]
+    },
+    "esModuleInterop": true,
+    "allowJs": true,
+    "resolveJsonModule": true
+  }
+}
