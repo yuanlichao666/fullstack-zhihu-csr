@@ -18,8 +18,6 @@
   </div>
 </template>
 <script setup lang="ts">
-import { useZImage } from '@/hooks/useImage'
-
 const slots = defineSlots<{
   error?: () => any
   loading?: () => any

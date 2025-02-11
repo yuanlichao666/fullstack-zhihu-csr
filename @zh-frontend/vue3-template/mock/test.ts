@@ -5,7 +5,7 @@ export default [
   {
     url: '/api/users',
     method: 'get',
-    response: ({ query }) => {
+    response: () => {
       return {
         code: 0,
         data: [{ name: 'ha' }, { name: 'h1' }, { name: 'h2' }],

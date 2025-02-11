@@ -7,7 +7,6 @@
 </template>
 
 <script setup lang="ts">
-import { useFetch } from '@vueuse/core'
 import { useUserList } from './useUsers'
 
 const { isFetching, error, data } = useUserList()

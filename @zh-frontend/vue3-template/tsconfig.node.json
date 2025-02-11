@@ -1,7 +1,7 @@
 {
   "extends": ["@tsconfig/node22/tsconfig.json"],
-  "include": ["./*.ts"],
-  "exclude": ["src/**/*"],
+  "include": ["./**/*.ts"],
+  "exclude": ["./src/**/*.ts"],
   "compilerOptions": {
     "strict": true,
     "module": "ESNext",
@@ -10,7 +10,7 @@
       "*": ["./"]
     },
     "moduleResolution": "bundler",
-
+    "lib": ["dom", "esnext"],
     "noEmit": false,
     "outDir": "./node_modules/.tmp/", // 指定输出目录
     "rootDir": "./", // 指定源代码的根目录
@@ -20,5 +20,10 @@
     "emitDeclarationOnly": true,
     "allowJs": true,
     "allowImportingTsExtensions": true
-  }
+  },
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    }
+  ]
 }

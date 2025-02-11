@@ -1,5 +1,5 @@
 <template>
-  <div class="col-start-start w-full pos-relative">
+  <div class="col-start-start pos-relative">
     <!-- avatar -->
     <ZImage
       v-if="avatar"
@@ -11,14 +11,14 @@
 
     <!-- card -->
     <div
-      class="w-full h-full flex-grow-1 col-start-start"
-      :class="{ 'divide-y border-1': border, 'mt-40': avatar }"
+      class="h-full w-full flex-grow-1 col-start-start"
+      :class="{ 'border-1': border, 'mt-40': avatar, 'rounded-md': rounded }"
     >
       <!-- prefix -->
       <slot name="prefix"></slot>
 
       <!-- icon -->
-      <div v-if="icon" class="flex-grow-1 w-full">
+      <div v-if="icon" class="flex-grow-1 row-start-center px-20">
         <component :is="icon" class="w-80 h-80"></component>
       </div>
 
@@ -32,11 +32,11 @@
       ></ZImage>
 
       <!-- content -->
-      <div v-if="content" class="col-start-start px-20 mt-auto">
-        <div class="mt-auto font-md lh-loose font-700">
+      <div v-if="content" class="col-start-start p-20 mt-auto">
+        <div class="font-sm line-clamp-1 mb-10 font-700">
           {{ content.title }}
         </div>
-        <p class="font-sm line-clamp-2">
+        <p class="font-xs line-clamp-2">
           {{ content.subTitle }}
         </p>
       </div>
@@ -54,6 +54,7 @@ interface CardProps {
   icon?: Component<any>
   avatar?: string
   border?: boolean
+  rounded?: boolean
   content?: {
     title?: string
     subTitle?: string
@@ -65,5 +66,5 @@ const slots = defineSlots<{
 }>()
 
 const props = defineProps<CardProps>()
-const { img, icon, avatar, content, border } = props
+const { img, icon, avatar, content, border, rounded } = props
 </script>

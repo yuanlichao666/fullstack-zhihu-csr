@@ -12,7 +12,6 @@ declare module 'vue' {
     IconCustomArrowRightCircle: typeof import('~icons/custom/arrow-right-circle')['default']
     IconCustomClose: typeof import('~icons/custom/close')['default']
     IconCustomMenu: typeof import('~icons/custom/menu')['default']
-    IconEpAim: typeof import('~icons/ep/aim')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     UserList: typeof import('./src/models/users/UserList.vue')['default']

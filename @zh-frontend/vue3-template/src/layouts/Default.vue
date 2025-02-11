@@ -2,28 +2,27 @@
   <!-- header -->
   <div
     :class="[
-      'pc:()',
+      'z-header--container',
+      'common:(fixed z-10 h-60)',
+      y > 0 && 'common:(bg-black op35)',
       'mobile:(transition-all duration-500)',
-      'common:(fixed left-0 top-0 z-10 h-60 w-full)',
-      {
-        'common:(bg-black op35)': y > 0,
-        'mobile:(h-full bg-black op100)': show,
-      },
+      show && 'mobile:(h-full bg-black op100)',
     ]"
   >
     <ZContainer
       :class="[
+        'z-header--content',
+        'common:(h-full)',
         'pc:(row-start-center)',
         'mobile:(row-between-start pt-10)',
-        'common:(h-full)',
       ]"
     >
       <img src="../assets/logo.svg" class="w-40 h-40" />
 
       <ZMenu
         :class="[
-          'mobile:(absolute left-0 top-100 h-0 w-full px-50 mx-auto over-hid col-start-start! transition-all duration-500)',
-          { 'h-80%': show },
+          'mobile:(absolute left-0 top-100 h-0  w-full px-50 mx-auto over-hid col-start-start! transition-all duration-500)',
+          show && 'mobile:(h-80%)',
         ]"
       ></ZMenu>
 
