@@ -5,7 +5,7 @@ import presetWind from '@unocss/preset-wind'
 import { defineConfig } from 'unocss'
 
 export default defineConfig({
-  envMode: 'build',
+  envMode: 'dev',
   transformers: [transformerDirectives(), transformerVariantGroup()],
   shortcuts: [
     {
@@ -20,11 +20,14 @@ export default defineConfig({
       'font-xxl': 'text-22',
       'grid-inc':
         'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5',
+      'f-row': 'flex flex-row',
+      'f-col': 'flex flex-col',
       'row-start-start': 'flex flex-row justify-start items-start',
       'row-start-center': 'flex flex-row justify-start items-center',
       'row-center-center': 'flex flex-row justify-center items-center',
       'row-between-center': 'flex flex-row justify-between items-center',
       'row-between-start': 'flex flex-row justify-between items-start',
+      'col-center-center': 'flex flex-col justify-center items-center',
       'col-start-start': 'flex flex-col justify-start items-start',
       'col-center-start': 'flex flex-col justify-center items-start',
       'col-between-start': 'flex flex-col justify-between items-start',

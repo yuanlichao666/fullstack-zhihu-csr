@@ -25,11 +25,11 @@ const slots = defineSlots<{
 
 const props = defineProps<{
   src: string
-  fit: 'contain' | 'cover' | 'fill'
+  fit?: 'contain' | 'cover' | 'fill'
   alt?: string
   lazy?: boolean
 }>()
-const { src, fit, lazy } = props
+const { src, fit = 'cover', lazy } = props
 
 const container = useTemplateRef('z-img-container')
 

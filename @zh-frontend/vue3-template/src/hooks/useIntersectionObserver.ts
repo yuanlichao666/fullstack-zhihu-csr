@@ -6,7 +6,6 @@ export function useZIntersectionObserver(
 ) {
   const isVisible = ref<boolean>(false)
   const res = useIntersectionObserver(el, ([entry], observerElement) => {
-    console.log('inter')
     isVisible.value = entry?.isIntersecting || false
     cb(isVisible.value)
   })

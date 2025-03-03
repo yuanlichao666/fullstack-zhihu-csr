@@ -36,7 +36,6 @@ export function useZImage(options: UseImgOpritons) {
 
   // lazy load
   useZIntersectionObserver(container, (isVisible) => {
-    console.log('inter')
     if (lazy && isVisible) {
       load()
     }

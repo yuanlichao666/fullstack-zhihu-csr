@@ -7,7 +7,10 @@
 export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
-  const IconCustomDelete: typeof import('~icons/custom/delete')['default']
+  const IconCarbonAirplay: typeof import('~icons/carbon/airplay')['default']
+  const IconCarbonBook: typeof import('~icons/carbon/book')['default']
+  const IconCarbonBuilding: typeof import('~icons/carbon/building')['default']
+  const IconCarbonStore: typeof import('~icons/carbon/store')['default']
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
   const asyncComputed: typeof import('@vueuse/core')['asyncComputed']
   const autoResetRef: typeof import('@vueuse/core')['autoResetRef']
@@ -212,6 +215,7 @@ declare global {
   const useMouseInElement: typeof import('@vueuse/core')['useMouseInElement']
   const useMousePressed: typeof import('@vueuse/core')['useMousePressed']
   const useMutationObserver: typeof import('@vueuse/core')['useMutationObserver']
+  const useMyMediaQuerys: typeof import('./src/hooks/useMyMediaQuerys')['useMyMediaQuerys']
   const useNavigatorLanguage: typeof import('@vueuse/core')['useNavigatorLanguage']
   const useNetwork: typeof import('@vueuse/core')['useNetwork']
   const useNow: typeof import('@vueuse/core')['useNow']
@@ -251,6 +255,7 @@ declare global {
   const useSorted: typeof import('@vueuse/core')['useSorted']
   const useSpeechRecognition: typeof import('@vueuse/core')['useSpeechRecognition']
   const useSpeechSynthesis: typeof import('@vueuse/core')['useSpeechSynthesis']
+  const useState: typeof import('./src/hooks/useState')['useState']
   const useStepper: typeof import('@vueuse/core')['useStepper']
   const useStorage: typeof import('@vueuse/core')['useStorage']
   const useStorageAsync: typeof import('@vueuse/core')['useStorageAsync']

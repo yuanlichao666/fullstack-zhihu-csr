@@ -30,7 +30,9 @@ export default defineConfig({
     },
   },
   plugins: [
-    vueJsx(),
+    vueJsx({
+      isCustomElement: (element) => element.indexOf('swiper') >= 0,
+    }),
     VueMacros({
       plugins: {
         vue: vue(),
@@ -60,7 +62,7 @@ export default defineConfig({
       resolvers: [
         IconsResolver({
           prefix: 'icon',
-          enabledCollections: ['ep', 'custom'],
+          enabledCollections: ['ep', 'custom', 'carbon'],
         }),
         ElementPlusResolver(),
         VueUseComponentsResolver(),
@@ -109,7 +111,10 @@ function MyAutoImport() {
   return UnpluginAutoImport({
     resolvers: [
       ElementPlusResolver(),
-      IconsResolver({ prefix: 'icon', enabledCollections: ['ep', 'custom'] }),
+      IconsResolver({
+        prefix: 'icon',
+        enabledCollections: ['ep', 'custom', 'carbon'],
+      }),
     ],
     // targets to transform
     include: [

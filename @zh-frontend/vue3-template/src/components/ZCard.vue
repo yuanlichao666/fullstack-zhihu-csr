@@ -11,15 +11,19 @@
 
     <!-- card -->
     <div
-      class="h-full w-full flex-grow-1 col-start-start"
-      :class="{ 'border-1': border, 'mt-40': avatar, 'rounded-md': rounded }"
+      :class="[
+        'h-full w-full flex-grow-1 col-start-start overflow-hidden',
+        rounded && 'rounded-5',
+        border && 'border-1',
+        avatar && 'mt-40',
+      ]"
     >
       <!-- prefix -->
       <slot name="prefix"></slot>
 
       <!-- icon -->
       <div v-if="icon" class="flex-grow-1 row-start-center px-20">
-        <component :is="icon" class="w-80 h-80"></component>
+        <component :is="icon" class="h-40 w-40"></component>
       </div>
 
       <!-- image -->
@@ -29,6 +33,7 @@
         fit="cover"
         :lazy="true"
         class="flex-grow-1 w-full"
+        :class="imageRound && 'rounded-5'"
       ></ZImage>
 
       <!-- content -->
@@ -36,13 +41,12 @@
         <div class="font-sm line-clamp-1 mb-10 font-700">
           {{ content.title }}
         </div>
-        <p class="font-xs line-clamp-2">
+        <p class="font-xs line-clamp-2 color-gray-700">
           {{ content.subTitle }}
         </p>
+        <!-- suffix -->
+        <slot name="suffix"></slot>
       </div>
-
-      <!-- suffix -->
-      <slot name="suffix" :class="{}"></slot>
     </div>
   </div>
 </template>
@@ -59,6 +63,7 @@ interface CardProps {
     title?: string
     subTitle?: string
   }
+  imageRound?: boolean
 }
 const slots = defineSlots<{
   prefix?: (props: CardProps & HTMLAttributes) => any
@@ -66,5 +71,5 @@ const slots = defineSlots<{
 }>()
 
 const props = defineProps<CardProps>()
-const { img, icon, avatar, content, border, rounded } = props
+const { img, icon, avatar, content, border, rounded, imageRound } = props
 </script>
