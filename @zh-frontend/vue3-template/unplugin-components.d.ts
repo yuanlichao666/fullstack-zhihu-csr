@@ -7,22 +7,21 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    ElCarousel: typeof import('element-plus/es')['ElCarousel']
-    ElCarouselItem: typeof import('element-plus/es')['ElCarouselItem']
+    Abcd: typeof import('./src/components/abcd.md')['default']
     IconCarbonDirectionStraightRight: typeof import('~icons/carbon/direction-straight-right')['default']
     IconCustomArrowRightCircle: typeof import('~icons/custom/arrow-right-circle')['default']
     IconCustomClose: typeof import('~icons/custom/close')['default']
     IconCustomDirectionRight: typeof import('~icons/custom/direction-right')['default']
     IconCustomMenu: typeof import('~icons/custom/menu')['default']
-    IconEpRight: typeof import('~icons/ep/right')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SwiperItem: typeof import('./src/components/SwiperItem.vue')['default']
     UserList: typeof import('./src/models/users/UserList.vue')['default']
     ZCard: typeof import('./src/components/ZCard.vue')['default']
     ZContainer: typeof import('./src/components/ZContainer.vue')['default']
     ZImage: typeof import('./src/components/ZImage.vue')['default']
     ZMenu: typeof import('./src/components/ZMenu.vue')['default']
     ZSwiper: typeof import('./src/components/ZSwiper.vue')['default']
+    ZSwiperMk: typeof import('./src/components/ZSwiperMk.vue')['default']
+    ZSwiperWidthContent: typeof import('./src/components/ZSwiperWidthContent.vue')['default']
   }
 }

@@ -4,7 +4,7 @@
 <route lang="json">
 {
   "meta": {
-    "layout": "404"
+    "layout": "Default"
   }
 }
 </route>

@@ -2,9 +2,7 @@
   "name": "@zh-plugin/images",
   "version": "1.0.0",
   "description": "",
-  "bin": {
-    "gen": "tsx src/bin/generate-assets-types.ts && prettier --write src/assets/assets.d.ts"
-  },
+  "bin": {},
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

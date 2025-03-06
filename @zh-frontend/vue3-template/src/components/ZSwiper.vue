@@ -1,60 +1,69 @@
-<script setup lang="tsx" generic="T extends Record<string, any>">
+<script
+  setup
+  lang="tsx"
+  generic="T extends { img: string; [key: string]: any }"
+>
 // deps
-import { get, template } from 'lodash-es'
 import { register } from 'swiper/element/bundle'
 import type { SwiperProps } from './ZSwiper'
+import ZImage from './ZImage.vue'
+import { px2vw } from '@/utils/px2vw'
 
 register()
 
 // props
-
 const {
+  fit = 'cover',
+  rows = 1,
+  cols = 1,
+  loop = true,
   items,
-  rows,
-  cols,
-  itemHeight,
-  itemWidth,
-  itemClass,
-  containerClass,
-  containerWidth,
-  containerHeight,
+  width,
+  height,
+  autoplay = true,
+  direction = 'horizontal',
+  pagination = true,
+  navigation = false,
+  itemStyle = {},
+  containerStyle = {},
 } = defineProps<SwiperProps<T>>()
 
 // slots
 const slots = defineSlots<{
-  itemRender?(props: { item: T }): any
-  contentRender?(props: { item: T }): any
+  default?(props: { item: T }): any
 }>()
 
-// computed styles
-const containerStyle = computed(() => {
-  return {
-    height: containerHeight || itemHeight,
-    width: containerWidth || itemHeight,
-  }
-})
-const itemStyle = computed(() => {
-  return {
-    height: itemHeight || containerHeight,
-    width: itemWidth || containerWidth,
-  }
-})
-
 // emits
-const change = defineEmit<[newIdx: number, oldIdx: number]>()
+const onChange = defineEmit<[newIdx: number]>()
+
+// expose
+const [instance, setInstance] = useState<any>(null)
+const slideTo = (index: number) => {
+  instance.value.swiper.slideTo(index, 500)
+}
+defineExpose({ slideTo })
 
 // render
 defineRender(function () {
   const renderSwiper = () => {
+    const _containerStyle = [
+      height && { height },
+      width && { width },
+      containerStyle,
+    ] as any
     return (
       <swiper-container
-        class={['z-swiper-container w-full min-h-80', containerClass]}
-        style={containerStyle.value}
-        slides-per-view={cols}
+        class={['z-swiper-container w-full h-200']}
+        style={_containerStyle.filter(Boolean).map(px2vw)}
+        ref={setInstance}
+        loop={loop}
+        autoplay={autoplay}
         grid-rows={rows}
-        autoPlay={true}
-        loop={true}
-        onChange={change}
+        direction={direction}
+        pagination={pagination}
+        navigation={navigation}
+        slides-per-view={cols}
+        onSwiperslidechange={(e: any) => onChange(e.detail[0].realIndex)}
       >
         {renderItems()}
       </swiper-container>
@@ -62,65 +71,30 @@ defineRender(function () {
   }
 
   const renderItems = () => {
-    const renderDefaultItem = (item: T) => {
+    return items.map((item) => {
       return (
         <swiper-slide
-          style={itemStyle.value}
+          part="swiper-slide"
+          style={px2vw(itemStyle)}
           key={item?.img}
-          class={['z-swiper-item w-full h-full', itemClass]}
+          class={['z-swiper-item w-full h-full relative']}
         >
-          <div
-            style={{
-              backgroundImage: `url(${item?.img || null})`,
-              ...itemStyle.value,
-            }}
-            class="w-full h-full bg-cover bg-no-repeat"
-          >
-            <z-container class="w-full h-full row-start-center">
-              {renderItemContent(item)}
-            </z-container>
+          {item?.img && (
+            <ZImage
+              class="w-full h-full"
+              src={item?.img}
+              alt={item?.alt}
+              fit={fit}
+            />
+          )}
+          <div class="w-full h-full  absolute left-0 top-0">
+            {slots?.default && slots.default({ item })}
           </div>
         </swiper-slide>
       )
-    }
-
-    const renderCustomItem = (item: T) => {
-      const CustomItem = slots.itemRender!({ item })
-      return (
-        <swiper-slide
-          key={get(item, 'key') || get(item, 'img')}
-          class="w-full h-full"
-        >
-          <CustomItem>{renderItemContent(item)}</CustomItem>
-        </swiper-slide>
-      )
-    }
-
-    return items.map(slots.itemRender ? renderCustomItem : renderDefaultItem)
+    })
   }
 
-  const renderItemContent = (item: T) => {
-    const renderDefaultContent = (item: T) => {
-      return (
-        <div class="h-full col-center-start c-white">
-          <h1 class="mt-30 p-y-10 font-xl fw-700">{item?.title}</h1>
-          <h3 class="font-sm fw-400">{item?.subTitle}</h3>
-          <p class="mt-20 p-10  bg-black op-50 font-sm">
-            了解我们的产品
-            <icon-custom-arrow-right-circle class="inline-block ml-10"></icon-custom-arrow-right-circle>
-          </p>
-        </div>
-      )
-    }
-
-    const renderCustomContent = (item: T) => {
-      return <div></div>
-    }
-
-    return slots.contentRender
-      ? renderCustomContent(item)
-      : renderDefaultContent(item)
-  }
   return renderSwiper()
 })
 </script>

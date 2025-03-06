@@ -1,6 +1,29 @@
 <template>
   <!-- 轮播图 -->
-  <ZSwiper :items="lessons" class="h-380" :rows="1" :cols="1"> </ZSwiper>
+  <ZSwiper
+    :items="lessons"
+    class="h-380"
+    :rows="1"
+    :cols="1"
+    :autoplay="false"
+    fit="cover"
+  >
+    <template #default="{ item }">
+      <ZContainer class="row-start-center h-full">
+        <div class="h-full col-center-start c-white">
+          <h1 class="mt-30 p-y-10 font-xl fw-700">{{ item?.title }}</h1>
+          <h3 class="font-sm fw-400">{{ item?.subTitle }}</h3>
+          <p class="mt-20 p-10 bg-black op-50 font-sm">
+            了解我们的产品
+            <icon-custom-arrow-right-circle
+              class="inline-block ml-10"
+            ></icon-custom-arrow-right-circle>
+          </p>
+        </div>
+      </ZContainer>
+    </template>
+  </ZSwiper>
+
   <!-- 传播知识的种子 -->
   <ZContainer class="f-col! mt-30">
     <div class="w-full">
@@ -85,10 +108,8 @@
       :cols="cols"
       :items="friedns"
       class="h-100"
-      autoPlay="true"
       space-between="30"
     >
-      <template #contentRender> </template>
     </ZSwiper>
   </ZContainer>
 

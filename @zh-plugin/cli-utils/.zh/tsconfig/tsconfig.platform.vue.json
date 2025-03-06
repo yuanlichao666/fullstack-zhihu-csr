@@ -1,4 +1,0 @@
-{
-  "extends": ["@zh-plugin/tsconfig/project-mid/platforms/tsconfig.platform.vue.json"],
-  "include": ["../../src/platform-vue/**/*"]
-}

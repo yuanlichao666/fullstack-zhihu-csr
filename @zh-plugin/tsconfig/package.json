@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "@types/typescript": "^2.0.0",
-    "@zh-plugin/cli-utils": "workspace:^",
     "glob": "^11.0.0",
     "@zh-plugin/exec": "workspace:^"
   },

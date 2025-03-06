@@ -1,4 +1,0 @@
-{
-  "extends": ["@zh-plugin/tsconfig/project-mid/platforms/tsconfig.platform.nest.json"],
-  "include": ["../../src/platform-nest/**/*"]
-}

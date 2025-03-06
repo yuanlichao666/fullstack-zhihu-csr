@@ -39,6 +39,7 @@ export default [
   // custom rules
   allowSingleWordComponentName(),
   disableUnRegistryComponent(),
+  allowPreferImportFromVue(),
   ignoreCypressSupport(),
   supportJsxInVue(),
   ignoreAssets(),
@@ -102,6 +103,12 @@ function ignoreCypressSupport() {
 function ignoreAssets() {
   return {
     ignores: ['**/assets/**'],
+  }
+}
+
+function allowPreferImportFromVue() {
+  return {
+    rules: { 'vue/prefer-import-from-vue': 'off' },
   }
 }
 

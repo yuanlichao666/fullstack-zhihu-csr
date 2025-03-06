@@ -1,4 +1,0 @@
-{
-  "extends": ["@zh-plugin/tsconfig/project-mid/bin/tsconfig.json"],
-  "include": ["../../src/bin/**/*"]
-}
